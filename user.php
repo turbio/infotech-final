@@ -11,5 +11,29 @@ class user{
 		}
 		return false;
 	}
+
+	static function getName(){
+		if(session_status() != PHP_SESSION_NONE
+			&& !empty($_SESSION['user_name'])){
+			return $_SESSION['user_name'];
+		}
+
+		throw new Exception('no session');
+	}
+
+	static function login($name, $password, $database){
+		//TODO implement this
+		throw new Exception('not implemented');
+	}
+
+	static function signup($name, $password, $database){
+		//TODO implement this
+		throw new Exception('not implemented');
+	}
+
+	static function validateUsername($name){
+		//TODO implement this
+		throw new Exception('not implemented');
+	}
 }
 ?>
