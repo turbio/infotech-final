@@ -2,7 +2,7 @@
 //this can be included in every file and will draw an overlay when
 //GET variable 'debug' is set to 1
 
-if(!empty($_GET['debug'])){
+if(!empty($_GET['debug']) && $_GET['debug'] == '1'){
 	echo 'debug enabled';
 	phpinfo();
 }
