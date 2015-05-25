@@ -35,3 +35,5 @@ class DB{
 		return $results;
 	}
 }
+
+?>

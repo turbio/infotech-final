@@ -2,11 +2,17 @@
 session_start();
 
 include_once('View.php');
-include_once('DB.php');
-
 $template = new View();
+
+//include_once('DB.php');
 //$database = new DB();
 
-// This file can be found in the templates directory.
+include_once('user.php');
+if(user::isLoggedIn()){
+	echo "yes";
+}else{
+	echo "no";
+}
+
 $template->render('index.php');
 ?>
