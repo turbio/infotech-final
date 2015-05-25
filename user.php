@@ -1,13 +1,14 @@
 <?php
 class user{
-	public static $userTableName = 'users';
+	public static $userTable = 'users';
 
 	static function isLoggedIn(){
-		//a user is considered logged in if their name,
-		//password hash, and id are set
-		if(session_status() != PHP_SESSION_NONE
-			&& !empty($_SESSION['user_id'])
-			&& !empty($_SESSION['user_pass_hash'])
+		if(session_status() == PHP_SESSION_NONE){
+			session_start();
+		}
+
+		//a user is considered logged in if their name and id are set
+		if(!empty($_SESSION['user_id'])
 			&& !empty($_SESSION['user_name'])){
 			return true;
 		}
@@ -23,15 +24,57 @@ class user{
 		throw new Exception('no session');
 	}
 
+	static function getId(){
+		if(session_status() != PHP_SESSION_NONE
+			&& !empty($_SESSION['user_id'])){
+			return $_SESSION['user_id'];
+		}
+
+		throw new Exception('no session');
+	}
+
 	//checks if user has the correct credentials, then set the user's
 	//evironment variables if they do
 	static function login($name, $password, $database){
-		//TODO implement this
-		throw new Exception('not implemented');
+		if($name == ""){
+			throw new Exception('must supply a username');
+		}
+		if($password == ""){
+			throw new Exception('must supply a password');
+		}
+
+		$userQuery = $database->query(
+			'SELECT * FROM '.self::$userTable.'
+			WHERE username = "'. $name . '";');
+		$userInfo = $userQuery->fetch();
+
+		if(!empty($userInfo['password'])
+			&& !empty($userInfo['salt'])
+			&& !empty($userInfo['id'])){
+
+			$hashedPassword = hash("sha512", $password . $userInfo["salt"]);
+
+			if($userInfo["password"] == $hashedPassword){
+				if(session_status() == PHP_SESSION_NONE){
+					session_start();
+				}
+				$_SESSION['user_id'] = $userInfo["id"];
+				$_SESSION['user_name'] = $name;
+				return;
+			}
+
+		}
+
+		throw new Exception('incorrect credentials');
 	}
 
 	//destroy all session information thus logging the user out
 	static function logout(){
+		if(session_status() == PHP_SESSION_NONE){
+			session_start();
+		}
+		$_SESSION['user_id'] = null;
+		$_SESSION['user_name'] = null;
 		session_destroy();
 	}
 
@@ -43,10 +86,10 @@ class user{
 		$first_name,
 		$last_name,
 		$database){
-		if(!user::validName($name)){
+		if(!self::validateName($name)){
 			throw new Exception('usesrname not valid');
 		}
-		if(user::userExists($name, $database)){
+		if(self::userExists($name, $database)){
 			throw new Exception('user already exists');
 		}
 
@@ -55,7 +98,7 @@ class user{
 		$passwordHash = hash("sha512", $password . $passwordSalt);
 
 		$userAddQuery = $database->query(
-			'INSERT INTO '.self::$userTableName.' (
+			'INSERT INTO '.self::$userTable.' (
 				username,
 				password,
 				salt,
@@ -76,7 +119,8 @@ class user{
 	//check if a user exists with the given username
 	static function userExists($name, $database){
 		$userExistsQuery = $database->query(
-			'SELECT * FROM '.self::$userTableName.' WHERE username = "'. $name . '"');
+			'SELECT * FROM '.self::$userTable.' WHERE
+			LOWER(username) = LOWER("'. $name . '")');
 
 		if($userExistsQuery->fetch()){
 			return true;
@@ -86,7 +130,7 @@ class user{
 	}
 
 	//makes sure username is valo ie alphanumeric
-	static function validName($name){
+	static function validateName($name){
 		if(!ctype_alnum($name)){
 			return false;
 		}
