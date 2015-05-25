@@ -28,31 +28,54 @@ class steamInterface{
 		$expendedUrl = sprintf($this->steamQueryUrl, $this->steamKey, $steamIdAsString);
 
 		$rawJson = file_get_contents($expendedUrl);
-		$steamQueryResults = json_decode($rawJson, true);
+		$this->steamQueryResults = json_decode($rawJson, true);
 
-		print_r($steamQueryResults);
+
 		//$user_profile = $extended_profile["response"]["players"][0];
 		//return($user_profile);
 	}
 
-	//returns the url of the user's avatar at different sizes
-	function getSteamAvatarSmall($steamId){
-		throw new Exception('not implemented');
-		$profile = getSteamProfile($steam_id);
-		$avatar = $profile["avatar"];
-		return($avatar);
+	//TODO: REMOVE THIS
+	function printDebug(){
+		print_r($this->steamQueryResults);
 	}
-	function getSteamAvatarMedium($steam_id){
-		throw new Exception('not implemented');
-		$profile = getSteamProfile($steam_id);
-		$avatar = $profile["avatarmedium"];
-		return($avatar);
+
+	//returns the url of the user's avatar
+	//size determines if it should be (defualt is small)
+	//small = 0
+	//medium = 1
+	//large = 2
+	//the index is the order in which the uesr was requested (defualt is 0)
+	function getAvatar($size = 0, $userIndex = 0){
+		//throw new Exception('not implemented');
+		$user = $this->steamQueryResults['response']['players'][$userIndex];
+		$avatarUrl = '';
+
+		//select avatar url based on size, defaults to small/0 if the value
+		//is out of range
+		switch($size){
+			default:
+			case 0:
+				$avatarUrl = $user['avatar'];
+				break;
+			case 1:
+				$avatarUrl = $user['avatarmedium'];
+				break;
+			case 2:
+				$avatarUrl = $user['avatarfull'];
+				break;
+		}
+
+		return($avatarUrl);
 	}
-	function getSteamAvatarFull($steam_id){
-		throw new Exception('not implemented');
-		$profile = getSteamProfile($steam_id);
-		$avatar = $profile["avatarfull"];
-		return($avatar);
+	function getAvatarSmall($userIndex = 0){
+		return $this->getAvatar(0, $userIndex);
+	}
+	function getAvatarMedium($userIndex = 0){
+		return $this->getAvatar(1, $userIndex);
+	}
+	function getAvatarLarge($userIndex = 0){
+		return $this->getAvatar(2, $userIndex);
 	}
 
 }
