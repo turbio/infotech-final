@@ -32,8 +32,7 @@ class user{
 
 	//destroy all session information thus logging the user out
 	static function logout(){
-		//TODO implement this
-		throw new Exception('not implemented');
+		session_destroy();
 	}
 
 	//create an entry in the user's table for the desired username
