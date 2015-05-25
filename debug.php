@@ -1,13 +1,12 @@
 <?php
-//session_start();
+//this can be included in every file and will draw an overlay when
+//GET variable 'debug' is set to 1
 
-//include_once('View.php');
-//include_once('DB.php');
+if(!empty($_GET['debug'])){
+	echo 'debug enabled';
+	phpinfo();
+}
 
-//$template = new View();
-//$database = new DB();
-
-//// This file can be found in the templates directory.
-//$template->render('index.php');
-phpinfo();
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
 ?>
