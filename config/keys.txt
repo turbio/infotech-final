@@ -1,0 +1,4 @@
+Steam ID:
+https://developer.valvesoftware.com/wiki/Steam_Web_API#GetPlayerSummaries_.28v0001.29
+FAF55CE51DF85A6B5D18E836EF55D022
+

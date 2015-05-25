@@ -1,8 +1,8 @@
 <?php
 
 return array(
-	'user' => 'mason14',
-	'pass' => 'password',
-	'name' => 'mason14',
+	'user' => 'tony14',
+	'pass' => 'ty',
+	'name' => 'tony14',
 	'host' => 'localhost',
 );
