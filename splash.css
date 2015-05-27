@@ -10,9 +10,9 @@
 }
 
 #splashbar{
-	position: absolute;
-	right: 0;
-	left: 0;
+	/*position: absolute;*/
+	/*right: 0;*/
+	/*left: 0;*/
 
 	background: #009688;
 	/*width: 100%;*/
@@ -83,4 +83,23 @@
 	width: 100%;
 	-webkit-filter: blur(3px);
 	filter: blur(3px);
+}
+
+#content_container{
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+#message{
+	display: flex;
+	justify-content: center;
+	margin: 2em;
+	padding: 2em;
+	border-radius: 0.2em;
+	font-size: 2em;
+
+	/*background: rgba(255, 255, 255, .5);*/
+	background: rgba(128, 128, 128, .5);
+	color: white;
 }
