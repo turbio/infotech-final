@@ -5,9 +5,7 @@
 <body>
 
 <?php
-
-echo 'splash placeholder';
-
+echo 'place holder';
 ?>
 
 </body>

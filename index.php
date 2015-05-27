@@ -1,11 +1,12 @@
 <?php
-session_start();
-
 include_once('View.php');
-$template = new View();
+include_once('debug.php');
+include_once('user.php');
 
-include_once('DB.php');
-$database = new DB();
+if(user::isLoggedIn()){
+	header('Location: dashboard.php');
+}else{
+	$template = new View();
+	$template->render('index.php');
+}
 
-$template->render('index.php');
-?>
