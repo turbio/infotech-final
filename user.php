@@ -33,8 +33,8 @@ class user{
 		throw new Exception('no session');
 	}
 
-	//checks if user has the correct credentials, then set the user's
-	//evironment variables if they do
+	//checks if user has the correct credentials, then sets the user's
+	//environment variables if they do
 	static function login($name, $password, $database){
 		if($name == ""){
 			throw new Exception('must supply a username');
@@ -87,7 +87,7 @@ class user{
 		$last_name,
 		$database){
 		if(!self::validateName($name)){
-			throw new Exception('usesrname not valid');
+			throw new Exception('username not valid');
 		}
 		if(self::userExists($name, $database)){
 			throw new Exception('user already exists');
@@ -125,11 +125,10 @@ class user{
 		if($userExistsQuery->fetch()){
 			return true;
 		}
-
 		return false;
 	}
 
-	//makes sure username is valo ie alphanumeric
+	//makes sure username is valid ie. alphanumeric
 	static function validateName($name){
 		if(!ctype_alnum($name)){
 			return false;
