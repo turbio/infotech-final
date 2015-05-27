@@ -1,0 +1,86 @@
+@media (max-width: 600px) {
+	#splashbar{
+		/*height: 10em;*/
+	}
+}
+@media (min-width: 600px) {
+	#splashbar{
+		/*height: 20em;*/
+	}
+}
+
+#splashbar{
+	position: absolute;
+	right: 0;
+	left: 0;
+
+	background: #009688;
+	/*width: 100%;*/
+	overflow: hidden;
+	padding: 1em;
+}
+
+.splashbar_button{
+	cursor: pointer;
+	padding: .2em;
+	color: white;
+	font-size: 2.0em;
+	margin-left: .1em;
+	margin-right: .1em;
+
+	-webkit-transition: background .2s;
+	transition: background .2s;
+}
+
+.splashbar_button:hover{
+	background: rgba(0, 0, 0, .2);
+	border-radius: 0.1em;
+}
+
+#logo_container{
+	float: left;
+	align-items: center;
+	display: flex;
+}
+
+#logo{
+	height: 100%;
+}
+
+#logo_text{
+	float: left;
+	color: #fff;
+	font-size: 1.2em;
+}
+
+#logo_icon_container{
+	float: left;
+	height: 1em;
+	/*height: 25%;*/
+}
+
+#sign_up_button{
+	background: rgba(0, 0, 0, .1);
+}
+
+#sign_up_button:hover{
+	background: rgba(0, 0, 0, .2);
+}
+
+#right_button_container{
+	float: right;
+	align-items: center;
+	display: flex;
+}
+
+.image_slide{
+	
+}
+
+.image_slide > img{
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
