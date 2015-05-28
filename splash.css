@@ -1,11 +1,17 @@
-@media (max-width: 600px) {
-	#splashbar{
-		/*height: 10em;*/
+@media (max-width: 500px) {
+	#right_button_container{
+		/*float: center;*/
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 	}
 }
-@media (min-width: 600px) {
-	#splashbar{
-		/*height: 20em;*/
+@media (min-width: 500px) {
+	#right_button_container{
+		float: right;
+		align-items: center;
+		display: flex;
 	}
 }
 
@@ -27,6 +33,7 @@
 	font-size: 2.0em;
 	margin-left: .1em;
 	margin-right: .1em;
+	overflow: hidden;
 
 	-webkit-transition: background .2s;
 	transition: background .2s;
@@ -67,12 +74,6 @@
 	background: rgba(0, 0, 0, .2);
 }
 
-#right_button_container{
-	float: right;
-	align-items: center;
-	display: flex;
-}
-
 .image_slide{
 	
 }
@@ -94,12 +95,17 @@
 #message{
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	margin: 2em;
-	padding: 2em;
+	padding: 1em;
 	border-radius: 0.2em;
 	font-size: 2em;
 
-	/*background: rgba(255, 255, 255, .5);*/
-	background: rgba(128, 128, 128, .5);
+	background: rgba(0, 0, 0, .5);
+	/*background: rgba(128, 128, 128, .7);*/
 	color: white;
+}
+
+#steam_logo{
+	width: 2em;
 }
