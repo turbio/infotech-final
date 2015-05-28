@@ -10,15 +10,15 @@
 		<img src="res/splash_photo.jpg"/>
 	</div>
 	<div id="splashbar">
-		<div id="logo_container" class="splashbar_button">
+		<a href="index.php"><div id="logo_container" class="splashbar_button">
 			<div id="logo_icon_container">
 				<object type="image/svg+xml" data="res/logo.svg" id="logo">
 					logo
 				</object>
 			</div>
 			<div id="logo_text">Title</div>
-		</div>
-			<div id="right_button_container">
+		</div></a>
+		<div id="right_button_container">
 			<div class="splashbar_button" id="sign_up_button">sign up</div>
 			<div class="splashbar_button">sign in</div>
 			<div class="splashbar_button">
