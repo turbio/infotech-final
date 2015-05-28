@@ -12,5 +12,5 @@ if(!empty($_GET['e'])){
 	$template->embed = true;
 }
 
-$template->render('login.php');
+$template->render('signup.php');
 ?>
