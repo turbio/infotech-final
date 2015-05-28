@@ -39,5 +39,6 @@ echo "Lorem ipsum dolor sit amet, vis latine veritus perfecto eu, has cu tollit 
 	</div>
 </div>
 
+<div id="footer">footer stuff here</div>
 </body>
 </html>

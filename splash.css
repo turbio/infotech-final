@@ -109,3 +109,9 @@
 #steam_logo{
 	width: 2em;
 }
+
+#footer{
+	background: #fff;
+	box-shadow: inset 0 4px 9px -6px;
+	height: 5em;
+}
