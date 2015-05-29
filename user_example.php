@@ -1,17 +1,17 @@
 <?php
 include_once('debug.php');
 include_once('user.php');
-
 include_once('DB.php');
+
 $database = new DB();
 
 //prevents the remaining examples from actually being executed
 //you can change this to run each example
-$signup = false;
+$signup = true;
 $login  = false;
 $logout = false;
 
-$username   = "test";
+$username   = "tester";
 $password   = "another_test";
 $email      = "test@test.com";
 $first_name = "test";
@@ -30,7 +30,7 @@ if($login){
 //example signup
 if($signup){
 	try{
-		user::signup($username, $password, $email, $first_name, $last_name, $database);
+		user::signup($username, $password, $email, $database);
 		echo 'successfully signed up!';
 		echo '<br/>';
 	}catch(Exception $e){
@@ -44,6 +44,7 @@ if($logout){
 	user::logout();
 }
 
+
 //example checking if logged in and getting name and id
 if(user::isLoggedIn()){
 	echo "logged in as " . user::getName() . " with id " . user::getId();
@@ -51,5 +52,3 @@ if(user::isLoggedIn()){
 	echo "not logged in<br/>";
 
 }
-
-?>

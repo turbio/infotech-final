@@ -238,3 +238,17 @@ form{
 #captcha{
 	margin: .5em;
 }
+
+a{
+	text-decoration: none;
+}
+
+.popup{
+	display: hidden;
+	top: 5em;
+	right: 5em;
+	width: 20em;
+	height: 20em;
+	position: absolute;
+	background: rgba(255, 0, 255, .5);
+}

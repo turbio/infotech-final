@@ -6,7 +6,9 @@ echo '<div class="dialog_title">sign up</div>';
 echo '<hr/>';
 echo '<div class="dialog_pad">';
 
-echo '<div id="fail_box">invalid username</div>';
+if(isset($this->error)){
+	echo '<div id="fail_box">'.$this->error.'</div>';
+}
 
 echo '<form action="signup.php" method="POST">
 		<input type="text" name="username" placeholder="username" class="field">

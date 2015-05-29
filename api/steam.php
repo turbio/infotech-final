@@ -10,7 +10,6 @@ class steamInterface{
 	//request data for a steam id (or set of steam id's in an array)
 	//and load it
 	function request($steamId){
-
 		$steamIdAsString = "";
 		if(is_array($steamId)){
 			for($i = 0; $i < count($steamId); $i++){

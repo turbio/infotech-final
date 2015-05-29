@@ -2,6 +2,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="splash.css">
+	<link rel="stylesheet" type="text/css" href="splash.css">
+	<script src="splash_actions.js"></script>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 </head>
 <body>
@@ -19,13 +21,20 @@
 			<div id="logo_text">Title</div>
 		</div></a>
 		<div id="right_button_container">
-			<div class="splashbar_button" id="sign_up_button">sign up</div>
-			<div class="splashbar_button">sign in</div>
-			<div class="splashbar_button">
-				<object type="image/svg+xml" data="res/steam.svg" id="steam_logo">
-					steam logo
-				</object>
-			</div>
+			<a href="signup.php">
+				<div class="splashbar_button" id="sign_up_button">sign up</div>
+			</a>
+			<div class="popup"></div>
+			<a href="signin.php">
+				<div class="splashbar_button">sign in</div>
+			</a>
+			<a href="signin.php?steam=1">
+				<div class="splashbar_button">
+					<object type="image/svg+xml" data="res/steam.svg" id="steam_logo">
+						steam logo
+					</object>
+				</div>
+			</a>
 		</div>
 	</div>
 	<div id="content_container">

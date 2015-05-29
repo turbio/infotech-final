@@ -20,6 +20,9 @@ $steam = new steamInterface();
 //(no idea who these are)
 $steam->request($usersToQuery);
 
+//$steam->printDebug();
+
+
 //so see all the information gathered
 //$steam->printDebug();
 
