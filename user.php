@@ -4,7 +4,7 @@ class user{
 
 	static function isLoggedIn(){
 		//$status = session_status
-		if (session_status !== PHP_SESSION_ACTIVE) {
+		if(session_status() !== PHP_SESSION_ACTIVE) {
 			session_start();
 			
 		}
