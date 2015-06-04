@@ -16,12 +16,15 @@ class user{
 	}
 
 	static function getName(){
-		if(session_status() != PHP_SESSION_NONE
-			&& !empty($_SESSION['user_name'])){
-			return $_SESSION['user_name'];
+		if(session_status() == PHP_SESSION_NONE){
+				session_start();
 		}
 
-		throw new Exception('no session');
+		if(!empty($_SESSION['user_name'])){
+			return $_SESSION['user_name'];
+		}else{
+			throw new Exception('no user logged in');
+		}
 	}
 
 	static function getId(){
