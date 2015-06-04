@@ -2,7 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="splash.css">
-	<link rel="stylesheet" type="text/css" href="splash.css">
+
 	<script src="splash_actions.js"></script>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 </head>
@@ -18,7 +18,7 @@
 					logo
 				</object>
 			</div>
-			<div id="logo_text">Title</div>
+			<div id="logo_text"> A Tool to Play With</div>
 		</div></a>
 		<div id="right_button_container">
 			<a href="signup.php">
@@ -48,7 +48,7 @@
 		</div>
 	</div>
 
-	<div id="footer"><div class="filler">footer stuff here</div></div>
+	<div id="footer"><div class="filler">Turbio Inc &#169;</div></div>
 </div>
 </body>
 </html>

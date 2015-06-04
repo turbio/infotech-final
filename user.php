@@ -3,11 +3,13 @@ class user{
 	public static $userTable = 'users';
 
 	static function isLoggedIn(){
-		if(session_status() == PHP_SESSION_NONE){
+		//$status = session_status
+		if (session_status !== PHP_SESSION_ACTIVE) {
 			session_start();
+			
 		}
 
-		//a user is considered logged in if their username and id are set
+		//a user is considered logged in if their name and id are set
 		if(!empty($_SESSION['user_id'])
 			&& !empty($_SESSION['user_name'])){
 			return true;
@@ -35,8 +37,8 @@ class user{
 
 	//checks if user has the correct credentials, then sets the user's
 	//environment variables if they do
-	static function login($username, $password, $database){
-		if($username == ""){
+	static function login($name, $password, $database){
+		if($name == ""){
 			throw new Exception('must supply a username');
 		}
 		if($password == ""){
@@ -45,7 +47,7 @@ class user{
 
 		$userQuery = $database->query(
 			'SELECT * FROM '.self::$userTable.'
-			WHERE username = "'. $username . '";');
+			WHERE username = "'. $name . '";');
 		$userInfo = $userQuery->fetch();
 
 		if(!empty($userInfo['password'])
@@ -59,7 +61,7 @@ class user{
 					session_start();
 				}
 				$_SESSION['user_id'] = $userInfo["id"];
-				$_SESSION['user_name'] = $username;
+				$_SESSION['user_name'] = $name;
 				return;
 			}
 
@@ -80,14 +82,16 @@ class user{
 
 	//create an entry in the user's table for the desired username
 	static function signup(
-		$username,
+		$name,
 		$password,
 		$email,
+		//$first_name,
+		//$last_name,
 		$database){
-		if(!self::validateName($username)){
+		if(!self::validateName($name)){
 			throw new Exception('username not valid');
 		}
-		if(self::userExists($username, $database)){
+		if(self::userExists($name, $database)){
 			throw new Exception('user already exists');
 		}
 
@@ -95,29 +99,30 @@ class user{
 		$passwordSalt = md5(time());
 		$passwordHash = hash("sha512", $password . $passwordSalt);
 
-		//$userAddQuery = $database->query(
-			//'INSERT INTO '.self::$userTable.' (
-				//username,
-				//password,
-				//salt,
-				//email,
-				//date_joined)
-			//VALUES ("'
-			//. $username . '","'
-			//. $passwordHash . '","'
-			//. $passwordSalt . '","'
-			//. $email
-			//. '",NOW()"');
-
-		$userAddQuery = $database->query('INSERT INTO '.self::$userTable.' ( username, password, salt, email, date_joined) VALUES ("tester","pass","salt","email",NOW())');
-
+		$userAddQuery = $database->query(
+			'INSERT INTO '.self::$userTable.' (
+				username,
+				password,
+				salt,
+				email,
+				date_joined,
+				first_name,
+				last_name)
+			VALUES ("'
+			. $name . '","'
+			. $passwordHash . '","'
+			. $passwordSalt . '","'
+			. $email
+			. '",NOW(),"'
+			. $first_name . '","'
+			. $last_name . '")');
 	}
 
 	//check if a user exists with the given username
-	static function userExists($username, $database){
+	static function userExists($name, $database){
 		$userExistsQuery = $database->query(
 			'SELECT * FROM '.self::$userTable.' WHERE
-			LOWER(username) = LOWER("'. $username . '")');
+			LOWER(username) = LOWER("'. $name . '")');
 
 		if($userExistsQuery->fetch()){
 			return true;
@@ -126,16 +131,17 @@ class user{
 	}
 
 	//makes sure username is valid ie. alphanumeric
-	static function validateName($username){
-		if(!ctype_alnum($username)){
+	static function validateName($name){
+		if(!ctype_alnum($name)){
 			return false;
 		}
 		return true;
 	}
 
-	//makes sure email is valid and follows username@domain.tld
+	//makes sure email is valid and follows name@domain.tld
 	static function validateEmail($email){
 		//TODO implement this
 		throw new Exception('not implemented');
 	}
 }
+?>

@@ -45,6 +45,7 @@
 	margin-left: .1em;
 	margin-right: .1em;
 	overflow: hidden;
+	border-radius: 0.1em;
 
 	-webkit-transition: background .2s;
 	transition: background .2s;
@@ -132,8 +133,11 @@
 }
 
 .filler{
+	padding-top: .5em;
+	color: #ccc;
+	height: 2em;
 	text-align: center;
-	font-size: 5em;
+	font-size: 1em;
 }
 
 /*#wrapper{*/
