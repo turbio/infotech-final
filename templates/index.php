@@ -46,7 +46,7 @@
 	echo "<br/>";
 	echo "Lorem ipsum dolor sit amet, vis latine veritus perfecto eu, has cu tollit adolescens interesset. No sit fierent definiebas, no nisl case accumsan quo. Ad vis nominavi qualisque dignissim, ei vide tacimates percipitur sea, no sea officiis eleifend. Ea pro mnesarchum voluptatum. Est errem possit verear ut. Mea ut mutat expetenda.";
 	?>
-			<div class="splashbar_button" id="sign_up_button">sign up</div>
+			<!--<div class="splashbar_button" id="sign_up_button">sign up</div>-->
 		</div>
 	</div>
 
