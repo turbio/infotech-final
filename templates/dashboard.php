@@ -13,7 +13,7 @@ $titlebar = new TitleBar();
 $titlebar->setButton('signout_button', 'signout', 'signout.php');
 $userImage = '<img id="user_image" src="res/loading.gif"/> ';
 $titlebar->setButton('username_button', $userImage . user::getName(), 'profile.php');
-$titlebar->sesettton('example_button', 'example button', 'href="http://example.com"');
+$titlebar->setButton('example_button', 'example button', 'href="http://example.com"');
 
 $titlebar->render();
 
