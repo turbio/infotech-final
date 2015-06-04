@@ -8,7 +8,9 @@ echo '<div class="dialog_title">sign in</div>';
 echo '<hr/>';
 echo '<div class="dialog_pad">';
 
-echo '<div id="fail_box">your credidentials were incorrect.</div>';
+if(isset($this->error)){
+	echo '<div id="fail_box">'.$this->error.'</div>';
+}
 
 echo '<form action="signin.php" method="POST">
 		<input type="text" name="username" placeholder="username" class="field">

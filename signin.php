@@ -10,4 +10,19 @@ $template = new View();
 
 $template->embed = !empty($_GET['e']);
 
+if(!empty($_POST['username'])
+&& !empty($_POST['password'])){
+	try{
+		user::signin(
+			$_POST['username'],
+			$_POST['password'],
+			$database);
+
+		header("Location: index.php");
+		die();
+	}catch(Exception $e){
+		$template->error = $e->getMessage();
+	}
+}
+
 $template->render('signin.php');

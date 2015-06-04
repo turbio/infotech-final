@@ -27,7 +27,6 @@ if(!empty($_POST['username'])
 
 		header("Location: index.php");
 		die();
-
 	}catch(Exception $e){
 		$template->error = $e->getMessage();
 	}
