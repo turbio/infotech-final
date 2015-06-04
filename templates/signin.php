@@ -13,9 +13,9 @@ if(isset($this->error)){
 }
 
 echo '<form action="signin.php" method="POST">
-		<input type="text" name="username" placeholder="username" class="field">
+		<input type="text" name="username" id="username" class="field">
 		<br/>
-		<input type="password" name="password" placeholder="password" class="field">
+		<input type="password" name="password" id="password" class="field">
 		<br/>
 		<input type="submit" value="sign in" class="button">
 	</form>';

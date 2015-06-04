@@ -17,7 +17,7 @@
 					logo
 				</object>
 			</div>
-			<div id="logo_text">Title</div>
+			<div id="logo_text"> A Tool to Play With</div>
 		</div></a>
 		<div id="right_button_container">
 			<a href="signup.php" id="sign_up_link">
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 
-	<div id="footer"><div class="filler">footer stuff here</div></div>
+	<div id="footer"><div class="filler">Turbio Inc &#169;</div></div>
 </div>
 </body>
 </html>
