@@ -6,27 +6,13 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="splashbar">
-		<a href="index.php"><div id="logo_container" class="splashbar_button">
-			<div id="logo_icon_container">
-				<object type="image/svg+xml" data="res/logo.svg" id="logo">
-					logo
-				</object>
-			</div>
-			<div id="logo_text">Title</div>
-		</div></a>
-		<div id="right_button_container">
-			<!--<div class="popup" id="account_popup">-->
-			<!--	<img src="res/loading.gif"/>-->
-			<!--</div>-->
-			<a href="profile.php" id="sign_in_link"><div class="splashbar_button">
 <?php
-include_once('user.php');
-echo user::getName();
+$titlebar = new TitleBar();
+$titlebar->button('logout', 'href="logout.php" id="logout_button"');
+$titlebar->button(user::getName(), 'href="profile.php" id="username_button"');
+$titlebar->button('example button', 'href="http://example.com"');
+$titlebar->render();
 ?>
-			</div></a>
-		</div>
-	</div>
 	<div id="content_container">
 		<div id="message">
 			lorem ipsum...
