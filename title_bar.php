@@ -5,7 +5,7 @@ include_once('View.php');
 class TitleBar{
 	private $buttons = array();
 
-	function addButton($id, $content, $href='#'){
+	function setButton($id, $content, $href='#'){
 		$button = new Button();
 		$button->content = $content;
 		$button->id = $id;
