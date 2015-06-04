@@ -338,7 +338,7 @@ a{
 }
 
 .image_slide{
-	
+
 }
 
 .image_slide > img{
@@ -391,3 +391,14 @@ a{
 /*#wrapper{*/
 	/*height: 100%;*/
 /*}*/
+
+#signout_button{
+	font-size: 1.5em;
+	margin: 0;
+}
+
+#username_button{
+	text-align: middle;
+	vertical-align: center;
+	font-size: 1.5em;
+}

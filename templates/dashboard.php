@@ -8,9 +8,11 @@
 <div id="wrapper">
 <?php
 $titlebar = new TitleBar();
-$titlebar->setButton('signout', 'href="signou.php" id="signout_button"');
-$titlebar->setButton(user::getName(), 'href="profile.php" id="username_button"');
-$titlebar->setButton('example button', 'href="http://example.com"');
+$titlebar->addButton('signout_button', 'signout', 'signout.php');
+#TODO: TEMPORARY, JUST TO MAKE IT WORK
+$userImage = '<img id="user_image" src="res/loading.gif"/> ';
+$titlebar->addButton('username_button', $userImage . user::getName(), 'profile.php');
+$titlebar->addButton('example_button', 'example button', 'href="http://example.com"');
 $titlebar->render();
 ?>
 	<div id="content_container">

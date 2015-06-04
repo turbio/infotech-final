@@ -7,9 +7,9 @@
 	</div></a>
 	<div id="right_button_container">
 <?php
-foreach(array_reverse($this->buttons) as $key => $value){
-	echo '<a '.$value.'>';
-	echo '<div class="splashbar_button">'.$key.'</div></a>';
+foreach(array_reverse($this->buttons) as $button){
+	echo '<a href="'.$button->href.'">';
+	echo '<div id="'.$button->id.'" class="splashbar_button">'.$button->content.'</div></a>';
 }
 ?>
 	</div>

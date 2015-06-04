@@ -5,12 +5,17 @@ include_once('View.php');
 class TitleBar{
 	private $buttons = array();
 
-	function setButton($content, $attr = ""){
-		$this->buttons[$content] = $attr;
+	function addButton($id, $content, $href='#'){
+		$button = new Button();
+		$button->content = $content;
+		$button->id = $id;
+		$button->href = $href;
+
+		$this->buttons[$id] = $button;
 	}
 
-	function removeButton($button){
-		unset($button);
+	function removeButton($id){
+		throw new Exception("not implemented");
 	}
 
 	function render(){
@@ -20,3 +25,8 @@ class TitleBar{
 	}
 }
 
+class Button{
+	public $content;
+	public $href;
+	public $id;
+}
