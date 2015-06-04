@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 <?php
 echo '<div class="dialog">';
 echo '<div class="dialog_title">sign up</div>';
