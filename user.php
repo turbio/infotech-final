@@ -109,7 +109,10 @@ class user{
 			//. $email
 			//. '",NOW()"');
 
-		$userAddQuery = $database->query('INSERT INTO '.self::$userTable.' ( username, password, salt, email, date_joined) VALUES ("tester","pass","salt","email",NOW())');
+		$userAddQuery = $database->query(
+			'INSERT INTO '.self::$userTable.
+			' ( username, password, salt, email, date_joined)'.
+			'VALUES ("'.$username.'","'.$passwordHash.'","'.$passwordSalt.'","'.$email.'",NOW())');
 
 	}
 

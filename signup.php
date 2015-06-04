@@ -8,10 +8,7 @@ $database = new DB();
 
 $template = new View();
 
-if(!empty($_GET['e'])){
-	$template->embed = true;
-}
-
+$template->embed = !empty($_GET['e']);
 
 if(!empty($_POST['username'])
 && !empty($_POST['password'])
@@ -22,6 +19,9 @@ if(!empty($_POST['username'])
 			$_POST['password'],
 			$_POST['email'],
 			$database);
+
+		user::sign;
+
 	}catch(Exception $e){
 		$template->error = $e->getMessage();
 	}
