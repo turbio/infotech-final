@@ -24,7 +24,9 @@
 			<a href="signup.php" id="sign_up_link">
 				<div class="splashbar_button" id="sign_up_button">sign up</div>
 			</a>
-			<div class="popup" id="account_popup"></div>
+			<div class="popup" id="account_popup">
+				<img src="res/loading.gif"/>
+			</div>
 			<a href="signin.php" id="sign_in_link">
 				<div class="splashbar_button">sign in</div>
 			</a>
