@@ -8,9 +8,9 @@
 <div id="wrapper">
 <?php
 $titlebar = new TitleBar();
-$titlebar->button('logout', 'href="logout.php" id="logout_button"');
-$titlebar->button(user::getName(), 'href="profile.php" id="username_button"');
-$titlebar->button('example button', 'href="http://example.com"');
+$titlebar->setButton('signout', 'href="signou.php" id="signout_button"');
+$titlebar->setButton(user::getName(), 'href="profile.php" id="username_button"');
+$titlebar->setButton('example button', 'href="http://example.com"');
 $titlebar->render();
 ?>
 	<div id="content_container">

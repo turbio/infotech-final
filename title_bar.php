@@ -5,8 +5,12 @@ include_once('View.php');
 class TitleBar{
 	private $buttons = array();
 
-	function button($content, $attr = ""){
+	function setButton($content, $attr = ""){
 		$this->buttons[$content] = $attr;
+	}
+
+	function removeButton($button){
+		unset($button);
 	}
 
 	function render(){
