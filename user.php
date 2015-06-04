@@ -35,7 +35,7 @@ class user{
 
 	//checks if user has the correct credentials, then sets the user's
 	//environment variables if they do
-	static function login($username, $password, $database){
+	static function signin($username, $password, $database){
 		if($username == ""){
 			throw new Exception('must supply a username');
 		}

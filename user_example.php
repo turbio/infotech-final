@@ -8,7 +8,7 @@ $database = new DB();
 //prevents the remaining examples from actually being executed
 //you can change this to run each example
 $signup = true;
-$login  = false;
+$signin  = false;
 $logout = false;
 
 $username   = "tester";
@@ -17,12 +17,12 @@ $email      = "test@test.com";
 $first_name = "test";
 $last_name  = "user";
 
-//example login
-if($login){
+//example signin
+if($signin){
 	try{
-		user::login($username, $password, $database);
+		user::signin($username, $password, $database);
 	}catch(Exception $e){
-		echo 'unable to login, ' . $e->getMessage();
+		echo 'unable to signin, ' . $e->getMessage();
 		echo '<br/>';
 	}
 }
