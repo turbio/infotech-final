@@ -20,7 +20,13 @@ if(!empty($_POST['username'])
 			$_POST['email'],
 			$database);
 
-		user::sign;
+		user::signin(
+			$_POST['username'],
+			$_POST['password'],
+			$database);
+
+		header("Location: index.php");
+		die();
 
 	}catch(Exception $e){
 		$template->error = $e->getMessage();
