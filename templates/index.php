@@ -21,11 +21,11 @@
 			<div id="logo_text">Title</div>
 		</div></a>
 		<div id="right_button_container">
-			<a href="signup.php">
+			<a href="signup.php" id="sign_up_link">
 				<div class="splashbar_button" id="sign_up_button">sign up</div>
 			</a>
-			<div class="popup"></div>
-			<a href="signin.php">
+			<div class="popup" id="account_popup"></div>
+			<a href="signin.php" id="sign_in_link">
 				<div class="splashbar_button">sign in</div>
 			</a>
 			<a href="signin.php?steam=1">
