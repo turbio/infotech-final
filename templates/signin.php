@@ -1,5 +1,8 @@
-<link rel="stylesheet" type="text/css" href="style.css">
 <?php
+if(!$this->embed){
+	echo '<link rel="stylesheet" type="text/css" href="style.css">';
+}
+
 echo '<div class="dialog">';
 echo '<div class="dialog_title">sign in</div>';
 echo '<hr/>';
@@ -15,5 +18,3 @@ echo '<form action="signin.php" method="POST">
 		<input type="submit" value="sign in" class="button">
 	</form>';
 echo '</div>';
-
-?>

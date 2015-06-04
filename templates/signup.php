@@ -26,5 +26,3 @@ echo '<form action="signup.php" method="POST">
 		<input type="submit" value="sign up" class="button">
 	</form>';
 echo '</div>';
-
-?>

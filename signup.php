@@ -34,4 +34,3 @@ if(!empty($_POST['username'])
 }
 
 $template->render('signup.php');
-?>
