@@ -2,10 +2,10 @@
 include_once('debug.php');
 
 class steamInterface{
-	public $steamQueryUrl =
+	private $steamQueryUrl =
 		'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s';
-	public $steamKey = 'FAF55CE51DF85A6B5D18E836EF55D022';
-	public $steamQueryResults = "";
+	private $steamKey = 'FAF55CE51DF85A6B5D18E836EF55D022';
+	private $steamQueryResults = "";
 
 	//request data for a steam id (or set of steam id's in an array)
 	//and load it
