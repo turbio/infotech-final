@@ -15,7 +15,7 @@ if(isset($this->error)){
 }
 
 echo '<form action="signup.php" method="POST">
-		<input type="text" name="username" placeholder="username" class="field">
+		<input type="text" name="username" placeholder="username" class="field" autofocus>
 		<br/>
 		<input type="text" name="email" placeholder="email" class="field">
 		<br/>

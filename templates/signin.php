@@ -13,7 +13,7 @@ if(isset($this->error)){
 }
 
 echo '<form action="signin.php" method="POST">
-		<input type="text" name="username" placeholder="username" class="field"/>
+		<input type="text" name="username" placeholder="username" class="field" autofocus/>
 		<br/>
 		<input type="password" name="password" placeholder="username" class="field"/>
 		<br/>

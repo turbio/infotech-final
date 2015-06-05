@@ -1,13 +1,17 @@
 <?php
 class user{
 	public static $userTable = 'users';
+	private static $sessionStarted = false;
+
+	private static function startSession(){
+		if(!user::$sessionStarted){
+			session_start();
+			user::$sessionStarted = true;
+		}
+	}
 
 	static function isLoggedIn(){
-		//$status = session_status
-		if(session_status() !== PHP_SESSION_ACTIVE) {
-			session_start();
-			
-		}
+		user::startSession();
 
 		//a user is considered logged in if their username and id are set
 		if(!empty($_SESSION['user_id'])
@@ -18,9 +22,7 @@ class user{
 	}
 
 	static function getName(){
-		if(session_status() == PHP_SESSION_NONE){
-				session_start();
-		}
+		user::startSession();
 
 		if(!empty($_SESSION['user_name'])){
 			return $_SESSION['user_name'];
@@ -30,12 +32,8 @@ class user{
 	}
 
 	static function getId(){
-		if(session_status() != PHP_SESSION_NONE
-			&& !empty($_SESSION['user_id'])){
-			return $_SESSION['user_id'];
-		}
-
-		throw new Exception('no session');
+		user::startSession();
+		return $_SESSION['user_id'];
 	}
 
 	//checks if user has the correct credentials, then sets the user's
@@ -60,9 +58,7 @@ class user{
 			$hashedPassword = hash("sha512", $password . $userInfo["salt"]);
 
 			if($userInfo["password"] == $hashedPassword){
-				if(session_status() == PHP_SESSION_NONE){
-					session_start();
-				}
+				user::startSession();
 				$_SESSION['user_id'] = $userInfo["id"];
 				$_SESSION['user_name'] = $username;
 				return;
@@ -75,9 +71,7 @@ class user{
 
 	//destroy all session information thus logging the user out
 	static function logout(){
-		if(session_status() == PHP_SESSION_NONE){
-			session_start();
-		}
+		user::startSession();
 		$_SESSION['user_id'] = null;
 		$_SESSION['user_name'] = null;
 		session_destroy();
