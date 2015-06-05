@@ -139,8 +139,12 @@ class user{
 
 	//makes sure email is valid and follows username@domain.tld
 	static function validateEmail($email){
-		//TODO implement this
-		throw new Exception('not implemented');
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 }
 ?>
