@@ -4,7 +4,7 @@ class user{
 
 	static function isLoggedIn(){
 		//$status = session_status
-		if(session_status() !== PHP_SESSION_ACTIVE) {
+		if(session_status !== PHP_SESSION_ACTIVE) {
 			session_start();
 			
 		}
@@ -145,8 +145,12 @@ class user{
 
 	//makes sure email is valid and follows username@domain.tld
 	static function validateEmail($email){
-		//TODO implement this
-		throw new Exception('not implemented');
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 }
 ?>
