@@ -3,7 +3,7 @@
 		<div id="logo_icon_container">
 			<object type="image/svg+xml" data="res/logo.svg" id="logo">logo</object>
 		</div>
-		<div id="logo_text">asdffdas?</div>
+		<div id="logo_text" title="Main Page">Dashboard</div>
 	</div></a>
 	<div id="right_button_container">
 <?php
