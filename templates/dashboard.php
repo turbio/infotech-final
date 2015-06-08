@@ -27,11 +27,48 @@ $titlebar->render();
 					<div id="username_text">username</div>
 					<a href="#"><div class="steam_link_button"></div></a>
 				</div>
-				<div id="user_status">busy/away/availible?</div>
+				<div id="user_status">current schedule status</div>
 			</div>
 		</div>
 		<div class="content_card" id="user_friends_list">
-			<div style="margin-bottom: 10em">availible<br/>friends<br/>information<br/>here<br/>list of all your friends who are currently availible</div>
+			<div class="content_card" id="user_profile">
+				<div id="user_profile_icon" class="content_card"></div>
+				<div id="user_profile_text">
+					<div id="user_username">
+						<div id="username_text">test user</div>
+					</div>
+					<div id="user_status">availible</div>
+				</div>
+			</div>
+			<div class="content_card" id="user_profile">
+				<div id="user_profile_icon" class="content_card"></div>
+				<div id="user_profile_text">
+					<div id="user_username">
+						<div id="username_text">another user</div>
+						<a href="#"><div class="steam_link_button"></div></a>
+					</div>
+					<div id="user_status">availible</div>
+				</div>
+			</div>
+			<div class="content_card" id="user_profile">
+				<div id="user_profile_icon" class="content_card"></div>
+				<div id="user_profile_text">
+					<div id="user_username">
+						<div id="username_text">user2</div>
+						<a href="#"><div class="steam_link_button"></div></a>
+					</div>
+					<div id="user_status">availible</div>
+				</div>
+			</div>
+			<div class="content_card" id="user_profile">
+				<div id="user_profile_icon" class="content_card"></div>
+				<div id="user_profile_text">
+					<div id="user_username">
+						<div id="username_text">user3</div>
+					</div>
+					<div id="user_status">availible</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="content_card" id="user_schedule">
