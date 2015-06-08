@@ -10,9 +10,10 @@ $template = new View();
 
 
 //$display_limit = 50;
-$requestString = 'SELECT username FROM users';
+$requestString = 'SELECT * FROM users';
 
 $user_query = $database->query($requestString);
+//$user_query = $info_query->fetch();
 $template->user_query = $user_query;
 
 

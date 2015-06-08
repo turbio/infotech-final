@@ -318,6 +318,7 @@ a{
 }
 
 #logo_text{
+	margin-right: 1em;
 	float: left;
 	color: #fff;
 	font-size: 1.2em;
