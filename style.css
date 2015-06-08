@@ -374,6 +374,11 @@ a{
 
 }
 
+.card_title{
+	margin: .5em;
+	font-size: 2em;
+}
+
 #user_schedule{
 	background: #f0f;
 	overflow:hidden;
@@ -381,7 +386,8 @@ a{
 }
 
 #user_friends_list{
-	background: #0f0;
+	background: none;
+	box-shadow: none;
 }
 
 #user_profile_text{
