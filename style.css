@@ -319,7 +319,6 @@ a{
 }
 
 #logo_text{
-	margin-right: 1em;
 	float: left;
 	color: #fff;
 	font-size: 1.2em;
@@ -358,7 +357,7 @@ a{
 }
 
 @media (min-width: 700px) {
-	#user_profile{
+	.user_profile{
 	}
 
 	#dash_left_content{
@@ -371,7 +370,7 @@ a{
 	}
 }
 
-#user_profile{
+.user_profile{
 
 }
 

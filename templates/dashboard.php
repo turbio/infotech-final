@@ -20,7 +20,7 @@ $titlebar->render();
 
 ?>
 	<div id="dash_left_content">
-		<div class="content_card" id="user_profile">
+		<div class="content_card" class="user_profile">
 			<div id="user_profile_icon" class="content_card"></div>
 			<div id="user_profile_text">
 				<div id="user_username">
@@ -31,7 +31,7 @@ $titlebar->render();
 			</div>
 		</div>
 		<div class="content_card" id="user_friends_list">
-			<div class="content_card" id="user_profile">
+			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
 					<div id="user_username">
@@ -40,7 +40,7 @@ $titlebar->render();
 					<div id="user_status">availible</div>
 				</div>
 			</div>
-			<div class="content_card" id="user_profile">
+			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
 					<div id="user_username">
@@ -50,7 +50,7 @@ $titlebar->render();
 					<div id="user_status">availible</div>
 				</div>
 			</div>
-			<div class="content_card" id="user_profile">
+			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
 					<div id="user_username">
@@ -60,7 +60,7 @@ $titlebar->render();
 					<div id="user_status">availible</div>
 				</div>
 			</div>
-			<div class="content_card" id="user_profile">
+			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
 					<div id="user_username">
