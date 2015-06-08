@@ -91,7 +91,7 @@ class user{
 		if(self::userExists($username, $database)){
 			throw new Exception('user already exists');
 		}
-		if(self::validateEmail($email)){
+		if(!self::validateEmail($email)){
 			throw new Exception('email not valid');
 		}
 		
@@ -118,7 +118,13 @@ class user{
 			'INSERT INTO '.self::$userTable.
 			' ( username, password, salt, email, date_joined)'.
 			'VALUES ("'.$username.'","'.$passwordHash.'","'.$passwordSalt.'","'.$email.'",NOW())');
-
+			
+		
+		//once a new user registers, call sendEmail() to validate them
+	}
+	
+	static function sendEmail($address, $msg){
+		//TODO Add functionality
 	}
 
 	//check if a user exists with the given username
