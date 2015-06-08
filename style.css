@@ -266,6 +266,7 @@ a{
 		display: flex;
 	}
 }
+
 @media all and (orientation:portrait) {
 	.image_slide > img{
 		height: 100%;
@@ -355,12 +356,36 @@ a{
 	justify-content: center;
 }
 
+@media (min-width: 700px) {
+	#user_profile{
+	}
+
+	#dash_left_content{
+		width: 25em;
+		float: left;
+	}
+
+	#user_schedule{
+		width:auto;
+	}
+}
+
 #user_profile{
-	
+}
+
+#user_schedule{
+	background: #f0f;
+	overflow:hidden;
+	position: relative;
+}
+
+#user_friends_list{
+	background: #0f0;
 }
 
 #user_profile_text{
 	float: left;
+	margin: .5em;
 }
 
 .content_card{
@@ -373,12 +398,44 @@ a{
 #user_profile_icon{
 	width: 64px;
 	height: 64px;
-	background: red;
 	float: left;
-	background-image: url(res/filler_image.svg);
+	background-image: url(res/loading.gif);
 	background-repeat: no-repeat;
 	background-size: contain;
 	overflow: hidden;
+}
+
+#edit_schedule_card_button{
+	width: 1.5em;
+	height: 1.5em;
+	position: absolute;
+	right: 0;
+	background-image: url(res/edit.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	margin: 0.5em;
+}
+
+#edit_schedule_card_button:hover{
+	background-color: rgba(0, 0, 0, .5);
+	background-image: url(res/edit_white.svg);
+	border-radius: 0.2em;
+}
+
+.steam_link_button{
+	background-image: url("res/steam_link.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 1.2em;
+	height: 1.2em;
+	float: left;
+	margin-left: .25em;
+}
+
+#username_text{
+	float: left;
 }
 
 #user_username{
@@ -423,9 +480,8 @@ a{
 	font-size: 5em;
 }
 
-/*#wrapper{*/
-	/*height: 100%;*/
-/*}*/
+#wrapper{
+}
 
 #signout_button{
 	font-size: 1.5em;

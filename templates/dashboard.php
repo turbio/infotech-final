@@ -19,12 +19,24 @@ $titlebar->setButton('add_schedule_button', 'add schedule', 'schedule.php');
 $titlebar->render();
 
 ?>
-	<div class="content_card" id="user_profile">
-		<div id="user_profile_icon" class="content_card">user icon</div>
-		<div id="user_profile_text">
-			<div id="user_username">username</div>
-			<div id="user_status">busy/away/availible?</div>
+	<div id="dash_left_content">
+		<div class="content_card" id="user_profile">
+			<div id="user_profile_icon" class="content_card"></div>
+			<div id="user_profile_text">
+				<div id="user_username">
+					<div id="username_text">username</div>
+					<a href="#"><div class="steam_link_button"></div></a>
+				</div>
+				<div id="user_status">busy/away/availible?</div>
+			</div>
 		</div>
+		<div class="content_card" id="user_friends_list">
+			<div style="margin-bottom: 10em">availible<br/>friends<br/>information<br/>here<br/>list of all your friends who are currently availible</div>
+		</div>
+	</div>
+	<div class="content_card" id="user_schedule">
+		<div id="edit_schedule_card_button"> </div>
+		<div style="margin-bottom: 10em">schedule<br/>information<br/>here<br/>possible interactive, maybe an edit button in the upper right?</div>
 	</div>
 </div>
 </body>
