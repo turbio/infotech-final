@@ -13,7 +13,7 @@ $titlebar = new TitleBar();
 $titlebar->setButton('signout_button', '<img src="res/signout.svg"/>', 'signout.php');
 $userImage = '<img id="user_image" src="res/loading.gif"/> ';
 $titlebar->setButton('username_button', $userImage . user::getName(), 'profile.php');
-$titlebar->setButton('add_schedule_button', 'add schedule', 'schedule.php');
+$titlebar->setButton('add_schedule_button', '<img src="res/add_schedule.svg" title="Add a new schedule"/>', 'schedule.php');
 //$titlebar->setButton('example_button', 'example button', 'http://example.com');
 
 $titlebar->render();
