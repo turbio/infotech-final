@@ -390,6 +390,10 @@ a{
 	box-shadow: none;
 }
 
+.bar_icon{
+	width: 1.5em;
+}
+
 #user_profile_text{
 	float: left;
 	margin: .5em;
