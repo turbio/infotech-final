@@ -19,9 +19,11 @@ $titlebar->setButton('add_schedule_button', 'add schedule', 'schedule.php');
 $titlebar->render();
 
 ?>
-	<div id="content_container">
-		<div id="message">
-			lorem ipsum...
+	<div class="content_card" id="user_profile">
+		<div id="user_profile_icon" class="content_card">user icon</div>
+		<div id="user_profile_text">
+			<div id="user_username">username</div>
+			<div id="user_status">busy/away/availible?</div>
 		</div>
 	</div>
 </div>
