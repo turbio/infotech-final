@@ -31,6 +31,7 @@ $titlebar->render();
 			</div>
 		</div>
 		<div class="content_card" id="user_friends_list">
+			<div class="card_title">Availible</div>
 			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
