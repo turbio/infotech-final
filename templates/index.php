@@ -41,7 +41,10 @@
 	<div id="content_container">
 		<div id="message">
 	<?php
-	echo "<h1>community of 0+ users</h1>";
+	
+	$user_count = $this->user_count_query;
+	print_r($user_count);
+	echo "<h1>community of ". $user_count ." users</h1>";
 	echo "<br/>";
 	echo "Lorem ipsum dolor sit amet, vis latine veritus perfecto eu, has cu tollit adolescens interesset. No sit fierent definiebas, no nisl case accumsan quo. Ad vis nominavi qualisque dignissim, ei vide tacimates percipitur sea, no sea officiis eleifend. Ea pro mnesarchum voluptatum. Est errem possit verear ut. Mea ut mutat expetenda.";
 	?>
