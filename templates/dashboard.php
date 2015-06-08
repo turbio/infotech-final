@@ -17,6 +17,8 @@ $titlebar->setButton(
 	'add_schedule_button',
 	'<img src="res/add_schedule.svg" title="Add a new schedule" class="bar_icon"/>',
    	'schedule.php');
+$titlebar->setButton('add_schedule_button', '<img src="res/add_schedule_white.svg" title="Add a new schedule"/>', 'schedule.php');
+$titlebar->setButton('add_friend_button', '<img src="res/add_friend_white.svg" title="Add a new friend"/>', 'add_friend.php');
 //$titlebar->setButton('example_button', 'example button', 'http://example.com');
 
 $titlebar->render();

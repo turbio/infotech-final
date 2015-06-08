@@ -5,7 +5,7 @@ include_once('user.php');
 
 if(user::isLoggedIn()){
 	$template = new View();
-	$template->render('index.php');
+	$template->render('profile.php');
 }else{
 	header('Location: dashboard.php');
 }
