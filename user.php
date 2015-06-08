@@ -91,6 +91,10 @@ class user{
 		if(self::userExists($username, $database)){
 			throw new Exception('user already exists');
 		}
+		if(self::validateEmail($email)){
+			throw new Exception('email not valid');
+		}
+		
 
 		//the username show be valid and unique at this point
 		$passwordSalt = md5(time());
@@ -139,12 +143,7 @@ class user{
 
 	//makes sure email is valid and follows username@domain.tld
 	static function validateEmail($email){
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			return false;
-		}
-		else {
-			return true;
-		}
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
 	}
 }
 ?>
