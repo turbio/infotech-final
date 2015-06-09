@@ -78,7 +78,7 @@ $titlebar->render();
 		</div>
 	</div>
 	<div class="content_card" id="user_schedule">
-		<div id="edit_schedule_card_button"> </div>
+		<a href="schedule.php"><div id="edit_schedule_card_button"></div></a>
 		<div style="margin-bottom: 10em">schedule<br/>information<br/>here<br/>possible interactive, maybe an edit button in the upper right?</div>
 	</div>
 </div>
