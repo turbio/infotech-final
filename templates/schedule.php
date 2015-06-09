@@ -31,9 +31,11 @@ $titlebar->render();
 
 		    
 	    <form method="post" action="schedule.php">
+	        
+	    <div class="content_card">
             <h1><img src="res/start_black.svg"/> Starting Time </h1>
             <input id="start" type="time" maxlength="100" name="start"></p>
-    
+        </div>
             <h1><img src="res/end_black.svg"/> Ending Time </h1>
             <input id="end" type="time" name="end"></p>
     
