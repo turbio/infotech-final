@@ -11,7 +11,7 @@ if(user::isLoggedIn()){
 	header('Location: dashboard.php');
 }else{
 	$template = new View();	
-	
+	//Below is for getting current user count
 	$requestString = 'SELECT COUNT(*) FROM users';
 	$info_query = $database->query($requestString);
 	$user_count_query = $info_query->fetch();
