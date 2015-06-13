@@ -435,6 +435,16 @@ a{
 	border-radius: 0.2em;
 }
 
+.schedule_selectors{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	position: relative;
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0.5em;
+	float: left;
+}
+
 .steam_link_button{
 	background-image: url("res/steam_link.svg");
 	background-repeat: no-repeat;

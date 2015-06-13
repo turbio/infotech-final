@@ -33,21 +33,29 @@ $titlebar->render();
 	    <form method="post" action="schedule.php">
 	        
 	    <div class="content_card">
-            <h1><img src="res/start_black.svg"/> Starting Time </h1>
-            <input id="start" type="time" maxlength="100" name="start"></p>
+	        <div class="schedule_selectors">
+            <img src="res/start_black.svg"/> 
+            Starting Time 
+            <input id="start" type="time" name="start">
+            </div>
         </div>
+
+        <div class="content_card" class="schedule_selectors">
             <h1><img src="res/end_black.svg"/> Ending Time </h1>
             <input id="end" type="time" name="end"></p>
+        </div>
     
+        <div class="content_card" class="schedule_selectors">
             <h1><img src="res/timezone_black.svg"/> Timezone </h1>
-    <select name="timezone" id="timezone" onchange="">
+            <select name="timezone" id="timezone" onchange="">
+        </div>
 <?php
     include("tables/timezones.php");
 ?>
-    </select>
-    <input type="submit" value="Save Changes" onclick="">
+            </select>
+            <input type="submit" value="Save Changes" onclick="">
 
-    </form>
+        </form>
 
 		
 		
