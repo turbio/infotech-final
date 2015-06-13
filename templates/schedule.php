@@ -40,20 +40,26 @@ $titlebar->render();
             </div>
         </div>
 
-        <div class="content_card" class="schedule_selectors">
-            <h1><img src="res/end_black.svg"/> Ending Time </h1>
-            <input id="end" type="time" name="end"></p>
+        <div class="content_card">
+            <div class="schedule_selectors">
+            <img src="res/end_black.svg"/> 
+            Ending Time
+            <input id="end" type="time" name="end">
+            </div>
         </div>
     
-        <div class="content_card" class="schedule_selectors">
-            <h1><img src="res/timezone_black.svg"/> Timezone </h1>
-            <select name="timezone" id="timezone" onchange="">
+        <div class="content_card">
+            <div class="schedule_selectors">
+            <img src="res/timezone_black.svg"/> 
+            Timezone
+            <select  id="timezone" name="timezone" onchange="">
+            </div>
         </div>
 <?php
     include("tables/timezones.php");
 ?>
             </select>
-            <input type="submit" value="Save Changes" onclick="">
+            <input id="schedule_submit" type="submit" value="Save Schedule" onclick="">
 
         </form>
 
