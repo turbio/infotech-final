@@ -45,8 +45,18 @@ class user{
 		return $userInfo[0];
 	}
 
-	static function signin_steam($steamId){
+	static function signin_steam($steamId, $database){
+		$steamUserQuery = $database->query(
+			'SELECT *
+			FROM '.self::$userTable.'
+			WHERE steam_id = "'.$steamId.'";');
+		$steaUserInfo = $steamUserQuery->fetch();
 
+		if(count($steaUserInfo) == 0){
+
+		}
+
+		return $steaUserInfo;
 	}
 
 	//checks if user has the correct credentials, then sets the user's
@@ -112,29 +122,12 @@ class user{
 		$passwordSalt = md5(time());
 		$passwordHash = hash("sha512", $password . $passwordSalt);
 
-		//$userAddQuery = $database->query(
-			//'INSERT INTO '.self::$userTable.' (
-				//username,
-				//password,
-				//salt,
-				//email,
-				//date_joined)
-			//VALUES ("'
-			//. $username . '","'
-			//. $passwordHash . '","'
-			//. $passwordSalt . '","'
-			//. $email
-			//. '",NOW()"');
-
 		$userAddQuery = $database->query(
 			'INSERT INTO '.self::$userTable.
 			' ( username, password, salt, email, date_joined)'.
 			'VALUES ("'.$username.'","'.$passwordHash.'","'.$passwordSalt.'","'.$email.'",NOW())');
-			
-		
-		//once a new user registers, call sendEmail() to validate them
 	}
-	
+
 	static function sendEmail($address, $msg){
 		//TODO Add functionality
 	}

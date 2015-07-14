@@ -16,9 +16,10 @@ try{
 }
 
 if($signedIn){
+	$database = new DB();
 	$signin = new View();
 
-	user::signin_steam($steam->getId());
+	user::signin_steam($steam->getId(), $database);
 
 	$sign = new View();
 	$sign->template = $signin;

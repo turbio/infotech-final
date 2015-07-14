@@ -2,7 +2,7 @@
 <div class="dialog_title">Create an account?</div>
 <hr/>
 <div class="dialog_pad">
-this will allow you to log in without steam
+this will allow you to log in without steam,
 <br/>
 you can always complete this later
 <form action="signup.php" method="POST">
@@ -12,7 +12,7 @@ you can always complete this later
 	<br/>
 	<input type="password" name="password" placeholder="password" class="field">
 	<br/>
-	<input type="submit" value="submit" class="button">
+	<input type="submit" value="sign up" class="button">
 </form>
 <a href="index.php">
 	<div class="button">no thanks</div>
