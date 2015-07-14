@@ -1,7 +1,7 @@
 <div id="splashbar">
 	<a href="index.php"><div id="logo_container" class="splashbar_button">
 		<div id="logo_icon_container">
-			<object type="image/svg+xml" data="res/logo.svg" id="logo">logo</object>
+			<img src="res/logo.svg"/>
 		</div>
 		<div id="logo_text" title="Main Page"><?php echo $this->title; ?></div>
 	</div></a>
