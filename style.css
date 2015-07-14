@@ -128,8 +128,14 @@ form{
 	border-radius: 0.2em;
 	box-shadow: 0 0 10px #AAA;
 	color: white;
-	font-size: 1em;
+	font-size: 1.125em;
 	margin: .5em;
+	transition: all .5s;
+}
+
+.button:hover{
+	box-shadow: 1px 5px 20px #AAA;
+	background: #3275e4;
 }
 
 .dialog_title{
@@ -457,7 +463,6 @@ a{
 	font-family: helvetica;
 	float: right;
 	margin-left: 20px;
-	
 }
 
 #schedule_submit{
