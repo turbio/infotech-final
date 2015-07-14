@@ -14,6 +14,7 @@ class steamInterface{
 		if(!$openid->mode){
 			$openid->identity = 'http://steamcommunity.com/openid/?l=english';
 			header('Location: ' . $openid->authUrl());
+			return false;
 		}elseif($openid->mode == 'cancel'){
 			throw new Exception('user canceled authentication');
 		}elseif($openid->validate()){
@@ -21,6 +22,7 @@ class steamInterface{
 			$ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
 			preg_match($ptn, $id, $matches);
 			$this->request($matches[1]);
+			return true;
 		}else{
 			throw new Exception('user not logged in');
 		}

@@ -5,18 +5,34 @@ include_once('View.php');
 include_once('DB.php');
 include_once('api/steam.php');
 
+$signedIn = false;
+$error = false;
+
 $steam = new steamInterface();
 try{
-	$steam->signin();
-	//echo $steam->printDebug();
-	echo $steam->getName();
+	$signedIn = $steam->signin();
 }catch(Exception $e){
-	echo $e->getMessage();
+	$error = $e->getMessage();
+}
+
+if($signedIn){
+	$signin = new View();
+	$signin->render('steamsignin.php');
+}elseif($error){
+	$signinError = new View();
+	$signinError->message = $error;
+
+	$sign = new View();
+	$sign->template = $signinError;
+	$sign->templatePath = 'steamsignin_error.php';
+
+	$base = new View();
+	$base->template = $sign;
+	$base->templatePath = 'sign.php';
+	$base->render('base.php');
 }
 
 //$database = new DB();
-
-//$signin = new View();
 
 //$embed = !empty($_GET['e']);
 //$signin->error = False;
