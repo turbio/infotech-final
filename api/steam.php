@@ -1,15 +1,35 @@
 <?php
 include_once('debug.php');
+require 'include/openid.php';
 
 class steamInterface{
 	private $steamQueryUrl =
 		'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=%s&steamids=%s';
 	private $steamKey = 'FAF55CE51DF85A6B5D18E836EF55D022';
 	private $steamQueryResults = "";
+	private $steamId = "";
+
+	function signin(){
+		$openid = new LightOpenID('http://localhost/');
+		if(!$openid->mode){
+			$openid->identity = 'http://steamcommunity.com/openid/?l=english';
+			header('Location: ' . $openid->authUrl());
+		}elseif($openid->mode == 'cancel'){
+			throw new Exception('user canceled authentication');
+		}elseif($openid->validate()){
+			$id = $openid->identity;
+			$ptn = "/^http:\/\/steamcommunity\.com\/openid\/id\/(7[0-9]{15,25}+)$/";
+			preg_match($ptn, $id, $matches);
+			$this->request($matches[1]);
+		}else{
+			throw new Exception('user not logged in');
+		}
+	}
 
 	//request data for a steam id (or set of steam id's in an array)
 	//and load it
 	function request($steamId){
+		$this->steamId = $steamId;
 		$steamIdAsString = "";
 		if(is_array($steamId)){
 			for($i = 0; $i < count($steamId); $i++){
@@ -37,6 +57,11 @@ class steamInterface{
 	//TODO: REMOVE THIS
 	function printDebug(){
 		print_r($this->steamQueryResults);
+	}
+
+	function getName($userIndex = 0){
+		$user = $this->steamQueryResults['response']['players'][$userIndex];
+		return $user['personaname'];
 	}
 
 	//returns the url of the user's avatar
@@ -77,7 +102,9 @@ class steamInterface{
 		return $this->getAvatar(2, $userIndex);
 	}
 
-}
+	function getId(){
+		return $this->steamId;
+	}
 
-//there is a medium, 64x64 avatar, but that can be added later
+}
 ?>
