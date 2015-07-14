@@ -58,14 +58,14 @@ echo user::getName();
 			</div>
 		</div>
 		<div class="content_card" id="user_friends_list">
-			<div class="card_title">Availible</div>
+			<div class="card_title">Available</div>
 			<div class="content_card" class="user_profile">
 				<div id="user_profile_icon" class="content_card"></div>
 				<div id="user_profile_text">
 					<div id="user_username">
 						<div id="username_text">test user</div>
 					</div>
-					<div id="user_status">availible</div>
+					<div id="user_status">available</div>
 				</div>
 			</div>
 			<div class="content_card" class="user_profile">
@@ -75,7 +75,7 @@ echo user::getName();
 						<div id="username_text">another user</div>
 						<a href="#"><div class="steam_link_button"></div></a>
 					</div>
-					<div id="user_status">availible</div>
+					<div id="user_status">unavailable</div>
 				</div>
 			</div>
 			<div class="content_card" class="user_profile">
@@ -85,7 +85,7 @@ echo user::getName();
 						<div id="username_text">user2</div>
 						<a href="#"><div class="steam_link_button"></div></a>
 					</div>
-					<div id="user_status">availible</div>
+					<div id="user_status">available</div>
 				</div>
 			</div>
 			<div class="content_card" class="user_profile">
@@ -94,13 +94,13 @@ echo user::getName();
 					<div id="user_username">
 						<div id="username_text">user3</div>
 					</div>
-					<div id="user_status">availible</div>
+					<div id="user_status">available</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="content_card" id="user_schedule">
-		<div id="edit_schedule_card_button"> </div>
+		<a href="schedule.php"><div id="edit_schedule_card_button"></div></a>
 		<div style="margin-bottom: 10em">schedule<br/>information<br/>here<br/>possible interactive, maybe an edit button in the upper right?</div>
 	</div>
 </div>

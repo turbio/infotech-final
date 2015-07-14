@@ -294,7 +294,7 @@ a{
 	cursor: pointer;
 	padding: .2em;
 	color: white;
-	font-size: 2.0em;
+	font-size: 1.5em;
 	margin-left: .1em;
 	margin-right: .1em;
 	overflow: hidden;
@@ -433,6 +433,52 @@ a{
 	background-color: rgba(0, 0, 0, .5);
 	background-image: url(res/edit_white.svg);
 	border-radius: 0.2em;
+}
+
+
+
+
+/* --- schedule.php page ---- */
+
+
+.schedule_selectors{
+	position: relative;
+	font-weight: bold;
+	font-size: 2em;
+	margin: 0.5em;
+	float: left;
+}
+
+.schedule_selectors input{
+	border-width: 0px 4px 0px 4px;
+	border-color: #009688;
+	border-style: solid;
+	height: 2.5em;
+	font-family: helvetica;
+	float: right;
+	margin-left: 20px;
+	
+}
+
+#schedule_submit{
+	border-width: 0px 4px 0px 4px;
+	border-color: #009688;
+	border-style: solid;
+	height: 2.5em;
+	font-family: helvetica;
+	float: right;
+	margin-left: 20px;
+	transition: background-color .3s, color .5s, transform .5s;
+}
+
+#schedule_submit:hover{
+	background-color: #009688;
+	color: #fff;
+	transform: scale(1.1);
+}
+
+#timezone{
+	appearance: none;
 }
 
 .steam_link_button{
