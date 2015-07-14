@@ -3,9 +3,17 @@
 <hr/>
 <div class="dialog_pad">
 this will allow you to log in without steam
-<a href="index.php">
-	<div class="button">submit</div>
-</a>
+<br/>
+you can always complete this later
+<form action="signup.php" method="POST">
+	<input type="text" name="username" placeholder="username" class="field" autofocus>
+	<br/>
+	<input type="text" name="email" placeholder="email" class="field">
+	<br/>
+	<input type="password" name="password" placeholder="password" class="field">
+	<br/>
+	<input type="submit" value="submit" class="button">
+</form>
 <a href="index.php">
 	<div class="button">no thanks</div>
 </a>

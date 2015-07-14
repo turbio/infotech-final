@@ -45,6 +45,10 @@ class user{
 		return $userInfo[0];
 	}
 
+	static function signin_steam($steamId){
+
+	}
+
 	//checks if user has the correct credentials, then sets the user's
 	//environment variables if they do
 	static function signin($username, $password, $database){

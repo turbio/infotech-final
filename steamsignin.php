@@ -18,6 +18,8 @@ try{
 if($signedIn){
 	$signin = new View();
 
+	user::signin_steam($steam->getId());
+
 	$sign = new View();
 	$sign->template = $signin;
 	$sign->templatePath = 'steamsignin.php';
