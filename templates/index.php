@@ -10,31 +10,16 @@
 	<div class="image_slide">
 		<img src="res/splash_photo.jpg"/>
 	</div>
-	<div id="splashbar">
-		<a href="index.php"><div id="logo_container" class="splashbar_button">
-			<div id="logo_icon_container">
-				<object type="image/svg+xml" data="res/logo.svg" id="logo">
-					logo
-				</object>
-			</div>
-			<div id="logo_text">A Tool to Play With</div>
-		</div></a>
-		<div id="right_button_container">
-			<a href="signup.php" id="sign_up_link">
-				<div class="splashbar_button" id="sign_up_button">sign up</div>
-			</a>
-			<div class="popup" id="account_popup">
-				<img src="res/loading.gif"/>
-			</div>
-			<a href="signin.php" id="sign_in_link">
-				<div class="splashbar_button">sign in</div>
-			</a>
-			<a href="signin.php?steam=1">
-				<div class="splashbar_button">
-					<img src="res/steam.svg" id="steam_logo">
-				</div>
-			</a>
-		</div>
+<?php
+include_once('title_bar.php');
+$titlebar = new TitleBar();
+$titlebar->setButton('steam_sign_in_button', '<img src="res/steam.svg" id="steam_logo">', 'signin.php?steam=1');
+$titlebar->setButton('sign_in_button', 'sign in', 'signin.php');
+$titlebar->setButton('sign_up_button', 'sign up', 'signup.php');
+$titlebar->render();
+?>
+	<div class="popup" id="account_popup">
+		<img src="res/loading.gif"/>
 	</div>
 	<div id="content_container">
 		<div id="message">

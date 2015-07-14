@@ -4,6 +4,11 @@ include_once('View.php');
 
 class TitleBar{
 	private $buttons = array();
+	private $title = '';
+
+	function setTtitle($title){
+		$this->title = $title;
+	}
 
 	function setButton($id, $content, $href='#'){
 		$button = new Button();
@@ -21,6 +26,7 @@ class TitleBar{
 	function render(){
 		$template = new View();
 		$template->buttons = $this->buttons;
+		$template->title = $this->title;
 		$template->render('title_bar.php');
 	}
 }

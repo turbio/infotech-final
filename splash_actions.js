@@ -1,12 +1,8 @@
 window.onload = addjs;
 
 function addjs(){
-	console.log("test");
-	document.getElementById("sign_up_link").setAttribute("href", "#");
-	document.getElementById("sign_in_link").setAttribute("href", "#");
-
-	document.getElementById("sign_up_link").setAttribute("onclick", "show_signup()");
-	document.getElementById("sign_in_link").setAttribute("onclick", "show_signin()");
+	document.getElementById("sign_up_button_link").setAttribute("onclick", "show_signup(); return false;");
+	document.getElementById("sign_in_button_link").setAttribute("onclick", "show_signin(); return false;");
 }
 
 function show_signin(){
