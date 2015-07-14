@@ -17,7 +17,15 @@ try{
 
 if($signedIn){
 	$signin = new View();
-	$signin->render('steamsignin.php');
+
+	$sign = new View();
+	$sign->template = $signin;
+	$sign->templatePath = 'steamsignin.php';
+
+	$base = new View();
+	$base->template = $sign;
+	$base->templatePath = 'sign.php';
+	$base->render('base.php');
 }elseif($error){
 	$signinError = new View();
 	$signinError->message = $error;
