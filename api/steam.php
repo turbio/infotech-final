@@ -10,7 +10,7 @@ class steamInterface{
 	private $steamId = "";
 
 	function signin(){
-		$openid = new LightOpenID('http://localhost/');
+		$openid = new LightOpenID('http://' . $_SERVER['SERVER_NAME']);
 		if(!$openid->mode){
 			$openid->identity = 'http://steamcommunity.com/openid/?l=english';
 			header('Location: ' . $openid->authUrl());
