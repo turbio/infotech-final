@@ -1,8 +1,9 @@
 <?php
 include_once('debug.php');
 
-class steamInterface{
+class gravatarInterface{
 	private $queryUrl = 'http://www.gravatar.com/avatar/%s';
+	private $requestUrl = "";
 	private $queryResults = "";
 
 	//request data for a steam id (or set of steam id's in an array)
@@ -12,13 +13,16 @@ class steamInterface{
 		$requestEmail = strtolower($requestEmail);
 		$emailHash = md5($requestEmail);
 
-
-		$requestUrl = sprintf($queryUrl, $emailHash);
-		$this->queryResults = file_get_contents($requestUrl);
+		$this->requestUrl = sprintf($this->queryUrl, $emailHash);
+		$this->queryResults = file_get_contents($this->requestUrl);
 
 	}
 
 	function getAvatarUrl(){
+		return $this->requestUrl;
+	}
+
+	function getAvatar(){
 		return $this->queryResults;
 	}
 }

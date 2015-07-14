@@ -36,6 +36,15 @@ class user{
 		return $_SESSION['user_id'];
 	}
 
+	static function getEmail($database){
+		user::startSession();
+		$userQuery = $database->query(
+			'SELECT email FROM '.self::$userTable.'
+			WHERE id = '. $_SESSION['user_id'] . ';');
+		$userInfo = $userQuery->fetch();
+		return $userInfo[0];
+	}
+
 	//checks if user has the correct credentials, then sets the user's
 	//environment variables if they do
 	static function signin($username, $password, $database){
@@ -94,7 +103,6 @@ class user{
 		if(!self::validateEmail($email)){
 			throw new Exception('email not valid');
 		}
-		
 
 		//the username show be valid and unique at this point
 		$passwordSalt = md5(time());
