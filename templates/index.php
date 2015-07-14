@@ -33,7 +33,7 @@ $titlebar->render();
 		</div>
 	</div>
 
-	<div id="footer"><div class="filler">Turbio Inc &#169;</div></div>
+	<div id="footer"><div class="filler">license</div></div>
 </div>
 </body>
 </html>
