@@ -6,7 +6,6 @@ include_once('DB.php');
 
 $database = new DB();
 
-
 if(user::isLoggedIn()){
 	header('Location: dashboard.php');
 }else{

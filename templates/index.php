@@ -31,9 +31,7 @@
 			</a>
 			<a href="signin.php?steam=1">
 				<div class="splashbar_button">
-					<object type="image/svg+xml" data="res/steam.svg" id="steam_logo">
-						steam logo
-					</object>
+					<img src="res/steam.svg" id="steam_logo">
 				</div>
 			</a>
 		</div>
