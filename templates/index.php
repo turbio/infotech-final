@@ -13,7 +13,7 @@
 <?php
 include_once('title_bar.php');
 $titlebar = new TitleBar();
-$titlebar->setButton('steam_sign_in_button', '<img src="res/steam.svg" id="steam_logo">', 'signin.php?steam=1');
+$titlebar->setButton('steam_sign_in_button', '<img src="res/steam.svg" id="steam_logo">', 'steamsignin.php');
 $titlebar->setButton('sign_in_button', 'sign in', 'signin.php');
 $titlebar->setButton('sign_up_button', 'sign up', 'signup.php');
 $titlebar->render();

@@ -3,18 +3,6 @@ include_once('debug.php');
 include_once('user.php');
 include_once('View.php');
 include_once('DB.php');
-include_once('api/steam.php');
-
-if(!empty($_GET['steam'])){
-	$steam = new steamInterface();
-	try{
-		$steam->signin();
-		//echo $steam->printDebug();
-		echo $steam->getName();
-	}catch(Exception $e){
-		echo $e->getMessage();
-	}
-}
 
 $database = new DB();
 
