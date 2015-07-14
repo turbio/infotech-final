@@ -1,16 +1,10 @@
 <?php
-if(!$this->embed){
-	echo '
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://www.google.com/recaptcha/api.js"></script>';
-}
-
 echo '<div class="dialog">';
 echo '<div class="dialog_title">sign up</div>';
 echo '<hr/>';
 echo '<div class="dialog_pad">';
 
-if(isset($this->error)){
+if($this->error){
 	echo '<div id="fail_box">'.$this->error.'</div>';
 }
 

@@ -11,7 +11,7 @@ function addjs(){
 
 function show_signin(){
 	document.getElementById("account_popup").style["display"] = "block";
-	fetchHtml("signin.php", insert_into_popup)
+	fetchHtml("signin.php?e=1", insert_into_popup)
 }
 
 function show_signup(){
