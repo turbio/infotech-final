@@ -10,12 +10,11 @@ $database = new DB();
 if(user::isLoggedIn()){
 	header('Location: dashboard.php');
 }else{
-	$template = new View();	
-	//Below is for getting current user count
+	$template = new View();
+
 	$requestString = 'SELECT COUNT(*) FROM users';
-	$info_query = $database->query($requestString);
-	$user_count_query = $info_query->fetch();
-	$template->user_count_query = $user_count_query;
+	$user_count_query = $database->query($requestString)->fetch()[0];
+	$template->user_count = $user_count_query;
 
 	$template->render('index.php');
 }
