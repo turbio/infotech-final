@@ -20,6 +20,7 @@ if($signedIn){
 	$signin = new View();
 
 	user::signin_steam($steam->getId(), $database);
+	$signin->username = $steam->getname();
 
 	$sign = new View();
 	$sign->template = $signin;

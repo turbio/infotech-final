@@ -1,4 +1,6 @@
 <?php
+include_once('api/steam.php');
+
 class user{
 	public static $userTable = 'users';
 	private static $sessionStarted = false;
@@ -14,8 +16,7 @@ class user{
 		user::startSession();
 
 		//a user is considered logged in if their username and id are set
-		if(!empty($_SESSION['user_id'])
-			&& !empty($_SESSION['user_name'])){
+		if(!empty($_SESSION['user_id'])){
 			return true;
 		}
 		return false;
@@ -24,7 +25,11 @@ class user{
 	static function getName(){
 		user::startSession();
 
-		if(!empty($_SESSION['user_name'])){
+		if(!empty($_SESSION['steam_id'])){
+			$steam = new steamInterface();
+			$steam->request($_SESSION['steam_id']);
+			return $steam->getName();
+		}elseif(!empty($_SESSION['user_name'])){
 			return $_SESSION['user_name'];
 		}else{
 			throw new Exception('no user logged in');
@@ -50,13 +55,24 @@ class user{
 			'SELECT *
 			FROM '.self::$userTable.'
 			WHERE steam_id = "'.$steamId.'";');
-		$steaUserInfo = $steamUserQuery->fetch();
 
-		if(count($steaUserInfo) == 0){
-
+		//this user doesn't exist yet, so lets create them
+		if(!($steamUserInfo = $steamUserQuery->fetch())){
+			$steamUserAddQuery = $database->query(
+				'INSERT INTO '.self::$userTable.
+				' (date_joined, steam_id)'.
+				'VALUES (NOW(),"'.$steamId.'")');
 		}
 
-		return $steaUserInfo;
+		$userInfoQuery = $database->query(
+			'SELECT *
+			FROM '.self::$userTable.'
+			WHERE steam_id = "'.$steamId.'";');
+		$userInfo = $userInfoQuery->fetch();
+
+		user::startSession();
+		$_SESSION['user_id'] = $userInfo["id"];
+		$_SESSION['steam_id'] = $steamId;
 	}
 
 	//checks if user has the correct credentials, then sets the user's
